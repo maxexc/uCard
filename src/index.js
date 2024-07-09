@@ -1,7 +1,4 @@
-import module1 from "./module-1";
-import './css/common.scss';
-
-console.log('new Webpack');
-console.log(module1);
+import './style/sass/main.scss';
+import './js/gsap-module.js'
 
 

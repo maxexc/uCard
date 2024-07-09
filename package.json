@@ -43,16 +43,20 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2"
   },
+  "dependencies": {
+		"gsap": "^3.12.5"
+	},
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 10 versions"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 10 chrome version",
+      "last 10 firefox version",
+      "last 10 safari version"
     ]
   }
 }
