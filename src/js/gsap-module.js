@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         tiltx = dy / cy;
         tilty = dx / cx;
         radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
-        degree = radius * 18;
+        if (window.innerWidth < 576) {
+            degree = radius * 36; // Increased sensitivity for mobiles
+        } else {
+            degree = radius * 18;
+        }
         gsap.to('.content', 1, { transform: `rotate3d( ${tiltx}, ${tilty}, 0, ${degree}deg )` });
 
     };
