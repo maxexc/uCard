@@ -2,8 +2,13 @@ body {
     font-weight: 300;    
     overflow: hidden;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     background: linear-gradient(180deg, #003082 0%, #0050b3 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-repeat: no-repeat;
+    
 
     @include media-breakpoint-down(lg) {
         overflow: visible;
@@ -12,6 +17,7 @@ body {
 
     @include media-breakpoint-down(sm) {
         overflow-x: hidden;
+        overflow-y: hidden;
         background-size: cover;
     }
 }
@@ -20,10 +26,15 @@ body {
     transform-style: preserve-3d;
 }
 
+.container {
+    height: 100%;
+    overflow: hidden;
+}
+
 .top-line {
     position: absolute;
     width: 100%;
-    padding: 60px 0;
+    padding: 20px 0 60px 0;
     z-index: 100;
     background: transparent;
 
@@ -332,8 +343,15 @@ body {
     z-index: 50;
     @include media-breakpoint-down(sm) {
             transform: scale(0.7); // zoom: 0.7;
+            position: absolute;
+            left: 0;
+            right: 0;
+            // transform: translateX(-50%);
+            // margin: 0 auto;
+            // bottom: 1px;
+
         }
-        
+
     a {
         color: $accent;
         transition: color 0.25s ease;
