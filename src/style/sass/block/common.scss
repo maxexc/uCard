@@ -2,13 +2,12 @@ body {
     font-weight: 300;    
     overflow: hidden;
     margin: 0;
+    margin-bottom: 20px;
     background: linear-gradient(180deg, #003082 0%, #0050b3 100%);
 
     @include media-breakpoint-down(lg) {
         overflow: visible;
         overflow-x: hidden;
-        height: 100vh;
-        width: 100vw;
     }
 }
 
