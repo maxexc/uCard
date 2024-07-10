@@ -42,12 +42,15 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Fon
 
 // GENERAL DOCUMENT STYLES
 
-body {
+html, body {
 	font-family: $userfont;
 	font-size: $fontsize;
 	line-height: $lineheight;
 	color: $textcolor;
 	min-width: 320px;
 	position: relative;
-	overflow-x: hidden;
+	height: 100%;
+	overflow: hidden;
+	touch-action: none; // Prevent touch scrolling
+	// overflow-x: hidden;
 }

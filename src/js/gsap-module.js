@@ -1,4 +1,5 @@
 import { gsap } from 'gsap';
+import throttle from 'lodash.throttle';
 
 let cx, cy, mouseX, mouseY, posX, posY, clientX, clientY, dx, dy, tiltx, tilty, request, radius, degree;
 
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         follower.classList.remove('hidden');
     });
 
-    body.addEventListener('touchmove', e => {
+    body.addEventListener('touchmove', throttle(e => {
         clientX = e.touches[0].pageX;
         clientY = e.touches[0].pageY;
 
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseCoords(e.touches[0]);
         cursor.classList.remove('hidden');
         follower.classList.remove('hidden');
-    });
+    }, 100));
 
 
     function updateMe() {

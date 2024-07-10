@@ -50,7 +50,8 @@
     "webpack-dev-server": "^4.15.2"
   },
   "dependencies": {
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "lodash.throttle": "^4.1.1"
   },
   "browserslist": {
     "production": [
