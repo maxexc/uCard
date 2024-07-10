@@ -5,9 +5,19 @@ let cx, cy, mouseX, mouseY, posX, posY, clientX, clientY, dx, dy, tiltx, tilty, 
 document.addEventListener('DOMContentLoaded', () => {
 
     const body = document.querySelector('body');
+    const content = document.querySelector('.content');
 
-    cx = window.innerWidth / 2;
-    cy = window.innerHeight / 2;
+    const setCenter = () => {
+        const bounds = content.getBoundingClientRect();
+        cx = bounds.left + bounds.width / 2;
+        cy = bounds.top + bounds.height / 2;
+    };
+
+    setCenter();
+    window.addEventListener('resize', setCenter);
+
+    // cx = window.innerWidth / 2;
+    // cy = window.innerHeight / 2;
 
     body.addEventListener('mousemove', e => {
         clientX = e.pageX;

@@ -11,7 +11,7 @@ body {
     }
 
     @include media-breakpoint-down(sm) {
-        overflow: hidden;
+        overflow-x: hidden;
         background-size: cover;
     }
 }
@@ -259,6 +259,7 @@ body {
         height: 288px;
         display: inline-block;
         zoom: .9;
+        transform-origin: center center;
         .card-logo_w, .card-chip, .card-number-holder, .card-valid, .card-europe {
             opacity: 1;
         }
@@ -332,7 +333,7 @@ body {
     @include media-breakpoint-down(sm) {
             transform: scale(0.7); // zoom: 0.7;
         }
-
+        
     a {
         color: $accent;
         transition: color 0.25s ease;
