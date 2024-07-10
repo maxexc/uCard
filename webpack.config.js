@@ -20,7 +20,7 @@ module.exports = {
         compress: true,
         port: 4444,
         open: true,
-        watchFiles: ['src/**/*.html', 'src/**/*.scss', 'src/**/*.js'],
+        watchFiles: ['src/**/*.html'],
         devMiddleware: {
             stats: 'errors-only',
         },
@@ -32,7 +32,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/images/[name].[hash][ext][query]',
+                    filename: 'images/[name].[hash][ext][query]',
                 },
             },
             {
@@ -48,7 +48,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['babel-loader'],
             },
-        ]
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
