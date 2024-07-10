@@ -8,6 +8,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build'),
         clean: true,
+        publicPath: '/',
     },
     devServer: {
         static: {
@@ -19,13 +20,21 @@ module.exports = {
         compress: true,
         port: 4444,
         open: true,
-        watchFiles: ['src/**/*.html'],
+        watchFiles: ['src/**/*.html', 'src/**/*.scss', 'src/**/*.js'],
         devMiddleware: {
             stats: 'errors-only',
         },
+        historyApiFallback: true,
     },
     module: {
         rules: [
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[name].[hash][ext][query]',
+                },
+            },
             {
                 test: /\.s?css$/i,
                 use: [
