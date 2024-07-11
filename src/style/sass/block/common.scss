@@ -6,9 +6,7 @@ body {
     background: linear-gradient(180deg, #003082 0%, #0050b3 100%);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    // background-repeat: no-repeat;
-    
+    background-size: cover;    
 
     @include media-breakpoint-down(lg) {
         overflow: visible;
@@ -37,6 +35,9 @@ body {
     padding: 20px 0 60px 0;
     z-index: 100;
     background: transparent;
+    @include media-breakpoint-down(sm) {
+        padding: 20px 0 30px 0;
+    }
 
     .container-fluid {
         max-width: 1680px;
@@ -340,16 +341,14 @@ body {
     align-items: center;
     justify-content: center;
     background: transparent;
+    min-width: 380px;
     z-index: 50;
     @include media-breakpoint-down(sm) {
             transform: scale(0.7); // zoom: 0.7;
-            position: absolute;
+            position: fixed;
+            bottom: 40px;
             left: 0;
             right: 0;
-            // transform: translateX(-50%);
-            // margin: 0 auto;
-            // bottom: 1px;
-
         }
 
     a {
