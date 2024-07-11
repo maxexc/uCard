@@ -5,4 +5,8 @@ export function handleOrientationChange() {
     } else {
         body.classList.remove('scroll-active');
     }
+
+    if (window.gsap && typeof window.gsap.restart === 'function') {
+        window.gsap.restart();
+    }
 }

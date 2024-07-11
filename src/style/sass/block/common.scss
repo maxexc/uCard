@@ -346,16 +346,17 @@ body.scroll-active {
 .bottom-line {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: transparent;
+    justify-content: center;    
+    background-color: #0051b3c7;
     z-index: 50;
-    @include media-breakpoint-down(sm) {
-            transform: scale(0.7); // zoom: 0.7;
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-        }
+    @include media-breakpoint-down(sm) {        
+        background: transparent;
+        transform: scale(0.7); // zoom: 0.7;
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+    }
 
     a {
         color: $accent;
