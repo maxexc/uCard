@@ -1,9 +1,13 @@
 import { gsap } from 'gsap';
 import throttle from 'lodash.throttle';
+import { handleOrientationChange } from './screen-orientation';
 
 let cx, cy, mouseX, mouseY, posX, posY, clientX, clientY, dx, dy, tiltx, tilty, request, radius, degree;
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    handleOrientationChange();
+    window.addEventListener("orientationchange", handleOrientationChange);
 
     const body = document.querySelector('body');
     const content = document.querySelector('.content');
