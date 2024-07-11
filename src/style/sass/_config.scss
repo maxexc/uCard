@@ -56,4 +56,5 @@ html, body {
 
 body.scroll-active {
 	overflow-y: auto; 
+	touch-action: auto;
 }
