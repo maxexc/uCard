@@ -195,7 +195,10 @@ body {
         color: $textcolor;
         font-size: 31px;
         line-height: 43px;
-        margin-bottom: 38px;
+        margin: 0 0 38px 0;
+        @include media-breakpoint-down(sm) {
+            margin: 0 0 38px 0;
+        }
 
         strong {
             color: $textcolor;
@@ -338,6 +341,7 @@ body {
     align-items: center;
     justify-content: center;    
     background-color: #0051b3c7;
+    min-width: 380px;
     z-index: 50;
     @include media-breakpoint-down(sm) {        
         background: transparent;
