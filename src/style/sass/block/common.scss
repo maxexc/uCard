@@ -22,11 +22,6 @@ body {
 
 body.scroll-active {
     overflow-y: auto; 
-    touch-action: auto; 
-
-    @include media-breakpoint-down(sm) {
-        overflow-y: auto;
-    }
 }
 
 .preserve {
