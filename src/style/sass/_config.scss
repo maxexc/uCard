@@ -51,10 +51,12 @@ html, body {
 	position: relative;
 	height: 100%;
 	overflow: hidden;
+	background: linear-gradient(180deg, #003082 0%, #0050b3 100%);
 	touch-action: none; // Prevent touch scrolling
 }
 
 body.scroll-active {
+	background: linear-gradient(180deg, #003082 0%, #0050b3 100%);
 	overflow-y: auto; 
 	touch-action: auto;
 }
