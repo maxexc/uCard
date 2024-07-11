@@ -1,7 +1,8 @@
 export function handleOrientationChange() {
+    const body = document.querySelector('body');
     if (window.matchMedia("(orientation: landscape)").matches) {
-        window.screen.orientation.lock("portrait").catch(() => {
-            // if required
-        });
+        body.classList.add('scroll-active');
+    } else {
+        body.classList.remove('scroll-active');
     }
 }
