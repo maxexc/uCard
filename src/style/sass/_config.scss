@@ -52,9 +52,4 @@ html, body {
 	height: 100%;
 	overflow: hidden;
 	touch-action: none; // Prevent touch scrolling
-
-	@include media-breakpoint-down(lg) {
-        overflow-y: auto; 
-        touch-action: auto; 
-    }
 }
