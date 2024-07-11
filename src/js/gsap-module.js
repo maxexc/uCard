@@ -1,14 +1,14 @@
 import { gsap } from 'gsap';
 import throttle from 'lodash.throttle';
-import { handleOrientationChange } from './screen-orientation';
+import { lockOrientation } from './screen-orientation';
 
 let cx, cy, mouseX, mouseY, posX, posY, clientX, clientY, dx, dy, tiltx, tilty, request, radius, degree;
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    handleOrientationChange();
-    window.addEventListener('resize', throttle(handleOrientationChange, 250));
-    window.addEventListener("orientationchange", handleOrientationChange);
+    lockOrientation();
+    window.addEventListener('resize', throttle(lockOrientation, 250));
+    window.addEventListener('orientationchange', lockOrientation);
 
     const body = document.querySelector('body');
     const content = document.querySelector('.content');
