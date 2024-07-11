@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tilty = dx / cx;
         radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
         if (window.innerWidth < 576) {
-            degree = radius * 27; // Increased sensitivity for mobiles
+            degree = radius * 36; // Increased sensitivity for mobiles
         } else {
             degree = radius * 18;
         }
