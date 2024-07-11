@@ -53,3 +53,8 @@ html, body {
 	overflow: hidden;
 	touch-action: none; // Prevent touch scrolling
 }
+
+body.scroll-active {
+	overflow-y: auto; 
+	touch-action: auto; 
+}

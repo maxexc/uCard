@@ -20,6 +20,18 @@ body {
     }
 }
 
+body.scroll-active {
+    overflow-y: auto; 
+    touch-action: auto; 
+    @include media-breakpoint-down(lg) {
+        overflow-y: auto;
+    }
+
+    @include media-breakpoint-down(sm) {
+        overflow-y: auto;
+    }
+}
+
 .preserve {
     transform-style: preserve-3d;
 }
