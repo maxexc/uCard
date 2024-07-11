@@ -1,6 +1,7 @@
 body {
     font-weight: 300;    
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin: 0;
     margin-bottom: 40px;
     background: linear-gradient(180deg, #003082 0%, #0050b3 100%);
@@ -15,7 +16,7 @@ body {
 
     @include media-breakpoint-down(sm) {
         overflow-x: hidden;
-        overflow-y: hidden;
+        overflow-y: auto;
         background-size: cover;
     }
 }
@@ -346,7 +347,7 @@ body {
     @include media-breakpoint-down(sm) {
             transform: scale(0.7); // zoom: 0.7;
             position: fixed;
-            bottom: 40px;
+            bottom: 20px;
             left: 0;
             right: 0;
         }
