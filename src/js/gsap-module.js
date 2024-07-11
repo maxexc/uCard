@@ -7,6 +7,7 @@ let cx, cy, mouseX, mouseY, posX, posY, clientX, clientY, dx, dy, tiltx, tilty, 
 document.addEventListener('DOMContentLoaded', () => {
 
     handleOrientationChange();
+    window.addEventListener('resize', throttle(handleOrientationChange, 250));
     window.addEventListener("orientationchange", handleOrientationChange);
 
     const body = document.querySelector('body');
