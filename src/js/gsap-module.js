@@ -1,14 +1,9 @@
 import { gsap } from 'gsap';
 import throttle from 'lodash.throttle';
-import { lockOrientation } from './screen-orientation';
 
 let cx, cy, mouseX, mouseY, posX, posY, clientX, clientY, dx, dy, tiltx, tilty, request, radius, degree;
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    lockOrientation();
-    window.addEventListener('resize', throttle(lockOrientation, 250));
-    window.addEventListener('orientationchange', lockOrientation);
 
     const body = document.querySelector('body');
     const content = document.querySelector('.content');
@@ -21,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setCenter();
     window.addEventListener('resize', setCenter);
-
-    // cx = window.innerWidth / 2;
-    // cy = window.innerHeight / 2;
 
     body.addEventListener('mousemove', e => {
         clientX = e.pageX;
