@@ -17,27 +17,37 @@ document.addEventListener('DOMContentLoaded', () => {
     setCenter();
     window.addEventListener('resize', setCenter);
 
-    body.addEventListener('mousemove', e => {
+    let requestAnimationFrameId = null
+
+    function scheduleFrame() {
+        if (requestAnimationFrameId !== null) return;
+        requestAnimationFrameId = requestAnimationFrame(() => {
+            updateMe();
+            requestAnimationFrameId = null;
+        });
+    }
+
+    body.addEventListener('mousemove', throttle(e => {
         clientX = e.pageX;
         clientY = e.pageY;
 
-        request = requestAnimationFrame(updateMe);
+        scheduleFrame()
 
         mouseCoords(e);
         cursor.classList.remove('hidden');
         follower.classList.remove('hidden');
-    });
+    }, 16), { passive: true });
 
     body.addEventListener('touchmove', throttle(e => {
         clientX = e.touches[0].pageX;
         clientY = e.touches[0].pageY;
 
-        request = requestAnimationFrame(updateMe);
+        scheduleFrame()
 
         mouseCoords(e.touches[0]);
         cursor.classList.remove('hidden');
         follower.classList.remove('hidden');
-    }, 100));
+    }, 100), { passive: true });
 
 
     function updateMe() {
